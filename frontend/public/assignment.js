@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 displayAssignments();
                 form.reset();
+                alert("Assignment uploaded successfully!");
             };
             reader.readAsDataURL(file);
         });
@@ -97,4 +98,33 @@ function displayGrades() {
         gradesTable.innerHTML = `<tr><td colspan="3">No grades available yet.</td></tr>`;
     }
 }
+document.addEventListener("DOMContentLoaded", () => {
+    const gradesTable = document.getElementById("gradesTable");
+
+    // Retrieve assignments with grades from localStorage
+    let assignments = JSON.parse(localStorage.getItem("assignments")) || [];
+
+    function displayGrades() {
+        gradesTable.innerHTML = ""; // Clear previous data
+        assignments.forEach((assignment) => {
+            if (assignment.grade) { // Only show graded assignments
+                const row = `
+                    <tr>
+                        <td>${assignment.studentName}</td>
+                        <td>${assignment.subject}</td>
+                        <td>${assignment.grade}</td>
+                    </tr>
+                `;
+                gradesTable.innerHTML += row;
+            }
+        });
+
+        // If no grades found
+        if (gradesTable.innerHTML === "") {
+            gradesTable.innerHTML = `<tr><td colspan="3">No grades assigned yet.</td></tr>`;
+        }
+    }
+
+    displayGrades();
+});
 

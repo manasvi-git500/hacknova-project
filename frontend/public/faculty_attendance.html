@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance</title>
+    <link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Mark Attendance</h2>
+        <form id="attendanceForm">
+            <input type="text" id="studentName" placeholder="Student Name" required>
+            <input type="date" id="date" required>
+            <select id="status">
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+            <button type="submit">Submit Attendance</button>
+        </form>
+
+        <h2>Attendance Records</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceTable"></tbody>
+        </table>
+    </div>
+
+    <script src="attendance.js"></script>
+</body>
+</html>
