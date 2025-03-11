@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         signupForm.classList.add("hidden");
         loginForm.classList.remove("hidden");
-        formTitle.textContent = "Student Login";
+        formTitle.textContent = "Faculty Login";
     });
 
     

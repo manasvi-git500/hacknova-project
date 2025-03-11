@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple-Blue Gradient */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+/* Container for Forms & Tables */
+.container {
+    background: rgba(255, 255, 255, 0.15); /* Glassmorphism Effect */
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 20px;
+}
+
+/* Heading */
+h2 {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Input Fields */
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+input {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Button Styles */
+button {
+    background: linear-gradient(45deg, #ff6b6b, #ffcc00); /* Cyan-Pink Gradient */
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Table for Assignments */
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Table Head */
+thead {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Action Buttons */
+.grade-btn, .delete-btn {
+    background: linear-gradient(45deg, #00c9ff, #92fe9d); /* Teal-Green Gradient */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.delete-btn {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c); /* Red Gradient */
+}
+
+.grade-btn:hover, .delete-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
