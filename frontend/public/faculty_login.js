@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         
         const fullName = signupForm.querySelector("input[type='text']").value;
-        const email1 = signupForm.querySelector("input[type='email']").value;
-        const password1 = signupForm.querySelector("input[type='password']").value;
+        const email = signupForm.querySelector("input[type='email']").value;
+        const password = signupForm.querySelector("input[type='password']").value;
         const confirmPassword = signupForm.querySelectorAll("input[type='password']")[1].value;
 
        
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         signupForm.reset();
         signupForm.classList.add("hidden");
         loginForm.classList.remove("hidden");
-        formTitle.textContent = "Student Login";
+        formTitle.textContent = "Faculty Login";
     });
 
     // Handle Login Form
@@ -54,11 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const password = loginForm.querySelector("input[type='password']").value;
 
 
-// Simulate successful login
-alert("Login successful!");
-window.location.href = "student_dashboard.html"; // Redirect after login
-
-
-    
+        // Simulate successful login
+        alert("Login successful!");
+        window.location.href = "faculty_dashboard.html"; // Redirect after login
     });
 });
