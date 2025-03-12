@@ -1,16 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("assignmentForm");
     const tableBody = document.getElementById("assignmentTable");
+    const gradesTable = document.getElementById("gradesTable");
 
     let assignments = JSON.parse(localStorage.getItem("assignments")) || [];
 
     function displayAssignments() {
-        if (!tableBody) return; // Prevent error on upload page
+        if (!tableBody) return; // Prevent error if tableBody is null
         tableBody.innerHTML = "";
 
         assignments.forEach((assignment, index) => {
-            if (!assignment.studentName || !assignment.subject || !assignment.fileURL) return; // Avoid undefined values
-            
+            if (!assignment.studentName || !assignment.subject || !assignment.fileURL) return;
+
             const row = `
                 <tr>
                     <td>${assignment.studentName}</td>
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 localStorage.setItem("assignments", JSON.stringify(assignments));
 
                 displayAssignments();
+                displayGrades(); // Update grades table after submission
                 form.reset();
                 alert("Assignment uploaded successfully!");
             };
@@ -61,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             assignments[index].grade = grade;
             localStorage.setItem("assignments", JSON.stringify(assignments));
             displayAssignments();
+            displayGrades(); // Update grades table
         }
     };
 
@@ -68,21 +71,22 @@ document.addEventListener("DOMContentLoaded", function () {
         assignments.splice(index, 1);
         localStorage.setItem("assignments", JSON.stringify(assignments));
         displayAssignments();
+        displayGrades(); // Update grades table
     };
 
-    displayAssignments();
-});
-// Function to display grades (for students)
-function displayGrades() {
-    const gradesTable = document.getElementById("gradesTable");
-    if (!gradesTable) return; // Run only on the View Grades page
+    function displayGrades() {
+        if (!gradesTable) return; // Ensure it's only run on the correct page
 
-    let assignments = JSON.parse(localStorage.getItem("assignments")) || [];
+        gradesTable.innerHTML = ""; // Clear table before adding rows
 
-    gradesTable.innerHTML = ""; // Clear table before adding rows
+        let gradedAssignments = assignments.filter(a => a.grade); // Filter graded assignments
 
-    assignments.forEach((assignment) => {
-        if (assignment.grade) { // Show only graded assignments
+        if (gradedAssignments.length === 0) {
+            gradesTable.innerHTML = `<tr><td colspan="3">No grades available yet.</td></tr>`;
+            return;
+        }
+
+        gradedAssignments.forEach((assignment) => {
             const row = `
                 <tr>
                     <td>${assignment.studentName}</td>
@@ -91,40 +95,9 @@ function displayGrades() {
                 </tr>
             `;
             gradesTable.innerHTML += row;
-        }
-    });
-
-    if (assignments.length === 0 || gradesTable.innerHTML === "") {
-        gradesTable.innerHTML = `<tr><td colspan="3">No grades available yet.</td></tr>`;
-    }
-}
-document.addEventListener("DOMContentLoaded", () => {
-    const gradesTable = document.getElementById("gradesTable");
-
-    // Retrieve assignments with grades from localStorage
-    let assignments = JSON.parse(localStorage.getItem("assignments")) || [];
-
-    function displayGrades() {
-        gradesTable.innerHTML = ""; // Clear previous data
-        assignments.forEach((assignment) => {
-            if (assignment.grade) { // Only show graded assignments
-                const row = `
-                    <tr>
-                        <td>${assignment.studentName}</td>
-                        <td>${assignment.subject}</td>
-                        <td>${assignment.grade}</td>
-                    </tr>
-                `;
-                gradesTable.innerHTML += row;
-            }
         });
-
-        // If no grades found
-        if (gradesTable.innerHTML === "") {
-            gradesTable.innerHTML = `<tr><td colspan="3">No grades assigned yet.</td></tr>`;
-        }
     }
 
-    displayGrades();
+    displayAssignments();
+    displayGrades(); // Display grades on load
 });
-
