@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# College Management Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a **College Management Website** built using **HTML, CSS, and JavaScript**.  
+It provides features for students and faculty, including **assignment submission & grading, notice board, attendance tracking, and grade viewing**.  
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### 🎓 Student Features:
+- **Login & Sign-Up** (Temporary storage using JavaScript)
+- **Submit Assignments** and view uploaded assignments
+- **View Grades** assigned by faculty
+- **Check Notices** posted by faculty
+- **View Attendance** records
 
-### `npm start`
+### 👨‍🏫 Faculty Features:
+- **Login** to the faculty dashboard
+- **View Submitted Assignments** and assign grades
+- **Post Notices** on the Notice Board
+- **Mark Attendance** for students
+- **Manage Grades** for students
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Tech Stack
+- **Frontend:** HTML, CSS, JavaScript
+- **Styling:** Glassmorphism UI, Gradient Design, Dark Mode Theme
+- **Data Storage:** `localStorage` for temporary storage (No backend)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📂 Project Structure
+/college-management-website │── /css │ ├── style.css (Main styling) │── /js │ ├── script.js (Handles assignments, grades, attendance) │── /pages │ ├── student-login.html │ ├── faculty-dashboard.html │ ├── upload-assignment.html │ ├── view-assignments.html │ ├── view-grades.html │ ├── notice-board.html │ ├── attendance.html │── index.html (Homepage) │── README.md (This file)
+## 📖 How to Use
 
-### `npm test`
+### 🏫 For Students:
+1. **Login or Sign Up** on the student portal.
+2. **Upload Assignments** and view the submitted ones.
+3. **Check Grades** once faculty assigns them.
+4. **View Notices** and announcements.
+5. **Check Attendance** status.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📌 For Faculty:
+1. **Login to the Faculty Dashboard**.
+2. **View Submitted Assignments** and assign grades.
+3. **Post Notices** for students.
+4. **Mark Attendance** for students.
 
-### `npm run build`
+## 🎨 UI Design Guidelines
+- **Theme:** Dark Mode with Gradient Background
+- **Typography:** Inter, Raleway, Josefin Sans
+- **Style:** Glassmorphism effects, Gradient buttons, Blurred background
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠 Future Enhancements
+- Add authentication (Firebase or Backend)
+- Improve UI responsiveness
+- Add search & filter options
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+💡 **Made for a 24-hour Hackathon to gain experience!**
