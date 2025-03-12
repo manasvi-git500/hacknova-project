@@ -1,4 +1,5 @@
 # College Management Website
+Team Name: The Semi-Colons;
 
 This is a **College Management Website** built using **HTML, CSS, and JavaScript**.  
 It provides features for students and faculty, including **assignment submission & grading, notice board, attendance tracking, and grade viewing**.  
